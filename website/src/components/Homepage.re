@@ -80,7 +80,7 @@ let make = () =>
       </View>
       <Spacer size=Spacer.XXL />
       <ViewLink
-        href="/docs/"
+        href="/BsReactNative/gettingstarted/"
         style=Style.(
           style(
             ~borderRadius=6.,
