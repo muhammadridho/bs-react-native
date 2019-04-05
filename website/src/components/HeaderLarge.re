@@ -82,28 +82,28 @@ let styles =
   );
 
 [@react.component]
-let make = (~currentLocation) =>
+let make = (~currentLocation) => {
+  let uri = "/apple-touch-icon.png";
+  let width = 36.;
+  let height = 36.;
   <View style=styles##menu>
     <Container style=styles##bar wrapperStyle=styles##barWrapper>
       <ViewLink style=styles##logo href="/">
         /* <SVGLogo width=20. height=20. fill=Consts.Colors.dark /> */
         /* react-native-web doesn't render source when renderToString is used*/
 
-          {let uri = "/apple-touch-icon.png"
-           let width = 36.
-           let height = 36.
-           <Image
-             source={
-               Image.uriSource(~uri, ~width, ~height, ())
-               ->Image.Source.fromUriSource
-             }
-             defaultSource={Image.DefaultSource.fromUri(
-               ~uri,
-               ~width,
-               ~height,
-               (),
-             )}
-           />}
+          <Image
+            source={
+              Image.uriSource(~uri, ~width, ~height, ())
+              ->Image.Source.fromUriSource
+            }
+            defaultSource={Image.DefaultSource.fromUri(
+              ~uri,
+              ~width,
+              ~height,
+              (),
+            )}
+          />
           <Text style=styles##logoText>
             {("  " ++ Consts.title)->ReasonReact.string}
           </Text>
@@ -146,3 +146,4 @@ let make = (~currentLocation) =>
       </View>
     </Container>
   </View>;
+};
