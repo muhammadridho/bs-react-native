@@ -32,6 +32,8 @@ aliases:
     name: Setup opam
     command: |
       sudo apt-get install -y m4
+      which m4
+      echo "path $PATH"
       opam init --auto-setup --dot-profile=~/.bash_profile
       opam remote add ocamlorg https://opam.ocaml.org || true
       opam remote remove default || true
@@ -62,7 +64,8 @@ aliases:
     command: |
       yarn install --non-interactive --frozen-lockfile --cache-folder ~/.cache/yarn
       # until new react ppx is in bs-platform
-      npm install -g esy@0.5.6
+      yarn global add esy@0.5.6
+      echo "path $PATH"
       cd ./bs-react-native-next/node_modules/reason-react && esy install && esy build && cd ../../..
       cd ./website/node_modules/reason-react && esy install && esy build && cd ../../..
   - &tests-run
