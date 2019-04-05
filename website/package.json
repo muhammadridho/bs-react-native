@@ -16,7 +16,7 @@
     "build:prerender-legacy": "./scripts/legacy-doc.sh",
     "build:prerender": "node scripts/BuildWebsite.entry.js",
     "build:copy-static": "cpy \"public/**/*\" dist",
-    "build": "yarn re:build && yarn build:prepare && yarn build:prerender && yarn build:prerender-legacy && yarn build:copy-static",
+    "build": "yarn svg && yarn re:build && yarn build:prepare && yarn build:prerender && yarn build:prerender-legacy && yarn build:copy-static",
     "serve": "serve dist",
     "test": "yarn build"
   },
